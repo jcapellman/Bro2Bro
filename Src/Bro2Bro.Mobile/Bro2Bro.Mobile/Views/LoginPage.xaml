@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#4e4e4e"
+             x:Class="Bro2Bro.Mobile.Views.LoginPage">
+  <Grid VerticalOptions="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Image Grid.Row="0" Source="Icon" HorizontalOptions="Center" />
+    <Label Grid.Row="1" Text="bro2bro" FontSize="14" TextColor="White" HorizontalOptions="Center" />
+    <Entry Grid.Row="2" Placeholder="username" />
+    <Entry Grid.Row="3" IsPassword="True" Placeholder="password" />
+    <Button Grid.Row="4" Text="login" />
+  </Grid>
+</ContentPage>
