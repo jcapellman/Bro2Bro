@@ -51,7 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EFModel\EFModel.cs" />
+    <Compile Include="EFModel\EFObjects\Messages.cs" />
+    <Compile Include="EFModel\EntityFactory.cs" />
     <Compile Include="EFModel\EFObjects\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

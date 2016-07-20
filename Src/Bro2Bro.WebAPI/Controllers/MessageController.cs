@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Bro2Bro.PCL.Transports.Messages;
+using Bro2Bro.WebAPI.BusinessLayer.Managers;
+
+using System.Collections.Generic;
 
 namespace Bro2Bro.WebAPI.Controllers {
     public class MessageController : BaseController {
-        // GET api/values
-        public IEnumerable<string> Get() {
-            return new string[] { "value1", "value2" };
-        }
+        public List<MessageGroupListingResponseItem> Get() => new MessageManager(USER_GUID).GetListing();
     }
 }

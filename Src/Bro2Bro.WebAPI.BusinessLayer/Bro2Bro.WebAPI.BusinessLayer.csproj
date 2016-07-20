@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Managers\AuthManager.cs" />
     <Compile Include="Managers\BaseManager.cs" />
+    <Compile Include="Managers\MessageManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
