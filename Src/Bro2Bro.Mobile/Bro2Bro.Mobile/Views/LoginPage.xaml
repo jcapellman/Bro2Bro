@@ -14,8 +14,8 @@
 
     <Image Grid.Row="0" Source="Icon" HorizontalOptions="Center" />
     <Label Grid.Row="1" Text="bro2bro" FontSize="14" TextColor="White" HorizontalOptions="Center" />
-    <Entry Grid.Row="2" Placeholder="username" />
-    <Entry Grid.Row="3" IsPassword="True" Placeholder="password" />
-    <Button Grid.Row="4" Text="login" />
+    <Entry Grid.Row="2" Placeholder="username" Text="{Binding Username, Mode=TwoWay}" />
+    <Entry Grid.Row="3" IsPassword="True" Placeholder="password" Text="{Binding Password, Mode=TwoWay}" />
+    <Button Grid.Row="4" Text="login" x:Name="btnLogin" />
   </Grid>
 </ContentPage>

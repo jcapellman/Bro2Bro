@@ -25,6 +25,10 @@ namespace Bro2Bro.Mobile.ViewModels {
 
             var result = await authHandler.CheckAuth(Username, Password);
 
+            if (result.HasValue) {
+                App.UserGUID = result.Value;
+            }
+
             return result.HasValue;
         }
 
