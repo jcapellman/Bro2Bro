@@ -1,4 +1,6 @@
-﻿using Bro2Bro.Mobile.Views;
+﻿using System;
+
+using Bro2Bro.Mobile.Views;
 
 using Xamarin.Forms;
 

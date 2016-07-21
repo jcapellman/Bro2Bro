@@ -7,5 +7,7 @@ namespace Bro2Bro.WebAPI.DataLayer.EFModel {
         public EntityFactory() : base("name=EFModel") { }
         
         public DbSet<Users> Users { get; set; }
+
+        public DbSet<Messages> Messages { get; set; }
     }
 }
