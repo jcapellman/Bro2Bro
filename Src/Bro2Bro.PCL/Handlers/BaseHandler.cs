@@ -34,7 +34,9 @@ namespace Bro2Bro.PCL.Handlers {
         public async Task<T> GetAsync<T>() => await GetAsync<T>(string.Empty);
 
         protected async Task<T> GetAsync<T>(string urlArguments) {
-            var str = await GetHttpClient().GetStringAsync(generateURL(urlArguments));
+            var url = generateURL(urlArguments);
+
+            var str = await GetHttpClient().GetStringAsync(url);
 
             return JsonConvert.DeserializeObject<T>(str);
         }

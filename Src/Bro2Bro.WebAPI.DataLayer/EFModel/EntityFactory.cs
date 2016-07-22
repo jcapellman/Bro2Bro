@@ -4,7 +4,7 @@ namespace Bro2Bro.WebAPI.DataLayer.EFModel {
     using System.Data.Entity;
 
     public class EntityFactory : DbContext {
-        public EntityFactory() : base("name=EFModel") { }
+        public EntityFactory() : base("EFModel") { }
         
         public DbSet<Users> Users { get; set; }
 
