@@ -1,27 +1,35 @@
 ﻿using Bro2Bro.PCL.Handlers;
 using Bro2Bro.PCL.Transports.Messages;
 
-using System.Collections.ObjectModel;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace Bro2Bro.Mobile.ViewModels {
     public class MainModel : INotifyPropertyChanged {
-        private ObservableCollection<MessageGroupListingResponseItem> _messages;
+        private List<MessageGroupListingResponseItem> _messages;
 
-        public ObservableCollection<MessageGroupListingResponseItem> Messages {
+        public List<MessageGroupListingResponseItem> Messages {
             get { return _messages; }
             set { _messages = value;  OnPropertyChanged(); }
         }
 
-        public MainModel() { }
+        public MainModel() { Messages = new List<MessageGroupListingResponseItem>(); }
 
-        public async void LoadData() {
-            var messageHandler = new MessageHandler(App.UserGUID);
+        public async Task<string> LoadData() {
+            try {
+                var messageHandler = new MessageHandler(App.UserGUID);
 
-            var result = await messageHandler.GetListing();
+                var result = await messageHandler.GetListing();
+                
+                Messages = result;
 
-            Messages = new ObservableCollection<MessageGroupListingResponseItem>(result);
+                return string.Empty;
+            } catch (Exception ex) {
+                return ex.ToString();
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
