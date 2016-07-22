@@ -20,7 +20,8 @@ namespace Bro2Bro.Mobile.Views {
                 return;
             }
 
-            await Navigation.PushAsync(new MainPage());
+            Navigation.InsertPageBefore(new MainPage(), this);
+            await Navigation.PopAsync();
         }
     }
 }

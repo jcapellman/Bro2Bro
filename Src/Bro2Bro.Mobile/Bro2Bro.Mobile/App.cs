@@ -9,7 +9,7 @@ namespace Bro2Bro.Mobile {
         public static Guid UserGUID { get; set; }
 
         public App() {
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
     }
 }
