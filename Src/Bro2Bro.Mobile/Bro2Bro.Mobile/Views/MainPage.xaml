@@ -2,5 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bro2Bro.Mobile.Views.MainPage">
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ListView VerticalOptions="FillAndExpand" x:Name="lvMessages" ItemsSource="{Binding Messages}" SeparatorVisibility="None" >
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <Grid Padding="0, 0, 0, 20" RowSpacing="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+
+          <Label Grid.Row="0" Text="{Binding DisplayName}" />
+          <Label Grid.Row="1" FontSize="10" Text="{Binding PostTime}" />
+          <Label Grid.Row="2" Text="{Binding Message}" />
+        </Grid>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>
