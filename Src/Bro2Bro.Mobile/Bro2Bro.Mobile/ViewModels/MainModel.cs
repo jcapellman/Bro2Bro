@@ -3,12 +3,10 @@ using Bro2Bro.PCL.Transports.Messages;
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace Bro2Bro.Mobile.ViewModels {
-    public class MainModel : INotifyPropertyChanged {
+    public class MainModel : BaseModel {
         private List<MessageGroupListingResponseItem> _messages;
 
         public List<MessageGroupListingResponseItem> Messages {
@@ -30,12 +28,6 @@ namespace Bro2Bro.Mobile.ViewModels {
             } catch (Exception ex) {
                 return ex.ToString();
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

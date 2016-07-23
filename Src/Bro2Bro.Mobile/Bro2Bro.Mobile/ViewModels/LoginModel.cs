@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace Bro2Bro.Mobile.ViewModels {
-    public class LoginModel : INotifyPropertyChanged {
+    public class LoginModel : BaseModel {
         private string _username;
 
         public string Username {
@@ -82,12 +82,6 @@ namespace Bro2Bro.Mobile.ViewModels {
 
                 return ex.ToString();
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

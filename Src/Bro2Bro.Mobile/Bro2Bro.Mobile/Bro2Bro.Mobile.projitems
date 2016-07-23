@@ -10,8 +10,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GroupMessageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GroupMessagePage.xaml.cs">
+      <DependentUpon>GroupMessagePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -29,6 +35,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\GroupMessagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

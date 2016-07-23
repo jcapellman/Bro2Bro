@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.motionblurstudios.bro2bro" android:versionCode="1" android:versionName="1">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.motionblurstudios.bro2bro" android:versionName="1" android:versionCode="4">
 	<uses-sdk android:targetSdkVersion="24" android:minSdkVersion="23" />
+	<uses-permission android:name="android.permission.INTERNET" />
 	<application android:label="Bro2Bro" android:icon="@drawable/Icon"></application>
 </manifest>
