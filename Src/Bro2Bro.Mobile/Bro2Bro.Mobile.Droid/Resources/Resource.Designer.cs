@@ -2200,8 +2200,11 @@ namespace Bro2Bro.Mobile.Droid
 			// aapt resource value: 0x7f0200a0
 			public const int mr_ic_play_light = 2130837664;
 			
+			// aapt resource value: 0x7f0200a2
+			public const int notification_template_icon_bg = 2130837666;
+			
 			// aapt resource value: 0x7f0200a1
-			public const int notification_template_icon_bg = 2130837665;
+			public const int Splash = 2130837665;
 			
 			static Drawable()
 			{
@@ -3507,6 +3510,15 @@ namespace Bro2Bro.Mobile.Droid
 			
 			// aapt resource value: 0x7f0a001a
 			public const int CardView_Light = 2131361818;
+			
+			// aapt resource value: 0x7f0a0173
+			public const int MyTheme = 2131362163;
+			
+			// aapt resource value: 0x7f0a0172
+			public const int MyTheme_Base = 2131362162;
+			
+			// aapt resource value: 0x7f0a0174
+			public const int MyTheme_Splash = 2131362164;
 			
 			// aapt resource value: 0x7f0a0032
 			public const int Platform_AppCompat = 2131361842;

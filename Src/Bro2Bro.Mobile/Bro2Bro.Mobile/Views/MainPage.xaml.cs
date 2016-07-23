@@ -19,11 +19,19 @@ namespace Bro2Bro.Mobile.Views {
                 return;
             }
 
-            await viewModel.LoadData();
+            var result = await viewModel.LoadData();
+
+            SetForm();
 
             lvMessages.IsRefreshing = false;
         }
 
+        private void SetForm()
+        {
+            lvMessages.ItemsSource = null;
+
+            lvMessages.ItemsSource = viewModel.Messages;
+        }
         protected override async void OnBindingContextChanged() {
             var result = await viewModel.LoadData();
 
@@ -32,6 +40,8 @@ namespace Bro2Bro.Mobile.Views {
 
                 return;
             }
+
+            SetForm();
         }
     }
 }
