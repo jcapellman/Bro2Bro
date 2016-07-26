@@ -1,9 +1,9 @@
-﻿using Bro2Bro.PCL.Handlers;
-using Bro2Bro.PCL.Transports.Messages;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
+using Bro2Bro.PCL.Handlers;
+using Bro2Bro.PCL.Transports.Messages;
 
 namespace Bro2Bro.Mobile.ViewModels {
     public class MainModel : BaseModel {

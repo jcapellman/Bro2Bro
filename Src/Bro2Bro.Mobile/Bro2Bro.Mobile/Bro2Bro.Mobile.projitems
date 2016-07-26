@@ -10,6 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILocalStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\LoginItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GroupMessageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginModel.cs" />

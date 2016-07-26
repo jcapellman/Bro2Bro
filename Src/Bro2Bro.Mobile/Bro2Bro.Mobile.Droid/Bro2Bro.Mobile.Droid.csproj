@@ -76,6 +76,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ObjectModel" />
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile49\System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -152,6 +155,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\LocalStorage.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,6 +186,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\Splash.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="..\Bro2Bro.Mobile\Bro2Bro.Mobile.projitems" Label="Shared" Condition="Exists('..\Bro2Bro.Mobile\Bro2Bro.Mobile.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

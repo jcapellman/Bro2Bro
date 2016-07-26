@@ -23,7 +23,17 @@
 
       <Entry Grid.Row="0" Placeholder="username" Text="{Binding Username}" />
       <Entry Grid.Row="1" IsPassword="True" Placeholder="password" Text="{Binding Password}" />
-      <Switch Grid.Row="2" IsToggled="{Binding EnableRemember}" />
+
+      <Grid Grid.Row="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Text="remember credz" />
+        <Switch Grid.Column="1" IsToggled="{Binding EnableRemember}" />
+      </Grid>
+
       <Button Grid.Row="3" Text="login" Clicked="btnLogin_Clicked" IsEnabled="{Binding EnableLoginButton}" x:Name="btnLogin" />
     </Grid>
    

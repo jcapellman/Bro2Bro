@@ -1,8 +1,8 @@
-﻿using Bro2Bro.PCL.Handlers;
-using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System;
 using System.Threading.Tasks;
+
+using Bro2Bro.PCL.Handlers;
+using Bro2Bro.Mobile.Objects;
 
 namespace Bro2Bro.Mobile.ViewModels {
     public class LoginModel : BaseModel {
@@ -50,8 +50,18 @@ namespace Bro2Bro.Mobile.ViewModels {
             Password = string.Empty;
 
             EnableRunningIndicator = false;
-            EnableRemember = true;
+            EnableRemember = false;
             EnableLoginButton = false;
+            
+            var loginItem = ReadObject<LoginItem>("LoginItem");
+
+            if (loginItem == null) {
+                return;
+            }
+
+            EnableRemember = true;
+            Username = loginItem.Username;
+            Password = loginItem.Password;
         }
 
         public async Task<string> AttemptLogin() {
@@ -68,6 +78,17 @@ namespace Bro2Bro.Mobile.ViewModels {
 
                 if (result.HasValue) {
                     App.UserGUID = result.Value;
+
+                    if (EnableRemember) {
+                        var loginItem = new LoginItem {
+                            Username = Username,
+                            Password = Password
+                        };
+
+                        WriteObject(loginItem);
+                    } else {
+                        DeleteObject("LoginItem");
+                    }
                 } else {
                     response = "Sorry bro, not the right credz.";
                 }
