@@ -55,13 +55,13 @@ namespace Bro2Bro.Mobile.ViewModels {
             
             var loginItem = ReadObject<LoginItem>("LoginItem");
 
-            if (loginItem == null) {
+            if (loginItem == null || loginItem.HasError) {
                 return;
             }
 
             EnableRemember = true;
-            Username = loginItem.Username;
-            Password = loginItem.Password;
+            Username = loginItem.ReturnValue.Username;
+            Password = loginItem.ReturnValue.Password;
         }
 
         public async Task<string> AttemptLogin() {

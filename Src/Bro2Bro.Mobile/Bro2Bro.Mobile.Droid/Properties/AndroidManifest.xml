@@ -4,7 +4,7 @@
 	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="YOUR_PACKAGE_NAME.permission.C2D_MESSAGE" />
-	<permission android:name="YOUR_PACKAGE_NAME.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="com.motionblurstudios.bro2bro.permission.C2D_MESSAGE" />
+	<permission android:name="com.motionblurstudios.bro2bro.permission.C2D_MESSAGE" android:protectionLevel="signature" />
 	<application android:label="Bro2Bro" android:icon="@drawable/Icon"></application>
 </manifest>

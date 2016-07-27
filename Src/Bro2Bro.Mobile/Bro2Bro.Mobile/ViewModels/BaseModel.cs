@@ -3,14 +3,15 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using Bro2Bro.Mobile.Interfaces;
+using Bro2Bro.PCL.Transports.Global;
 
 using Xamarin.Forms;
 
 namespace Bro2Bro.Mobile.ViewModels {
     public class BaseModel : INotifyPropertyChanged {
-        internal T ReadObject<T>(string fileName) => DependencyService.Get<ILocalStorage>().Read<T>(fileName);
+        internal ReturnSet<T> ReadObject<T>(string fileName) => DependencyService.Get<ILocalStorage>().Read<T>(fileName);
 
-        internal T ReadObject<T>(Type objectType) => DependencyService.Get<ILocalStorage>().Read<T>(objectType);
+        internal ReturnSet<T> ReadObject<T>(Type objectType) => DependencyService.Get<ILocalStorage>().Read<T>(objectType);
 
         internal void WriteObject<T>(string fileName, T objectValue) => DependencyService.Get<ILocalStorage>().Write(fileName, objectValue);
 

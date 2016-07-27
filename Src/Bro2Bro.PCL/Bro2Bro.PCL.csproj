@@ -37,10 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Enums\ERROR_CODES.cs" />
     <Compile Include="Handlers\AuthHandler.cs" />
     <Compile Include="Handlers\BaseHandler.cs" />
     <Compile Include="Handlers\MessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transports\Global\ReturnSet.cs" />
     <Compile Include="Transports\Messages\MessageGroupListingResponseItem.cs" />
     <Compile Include="Transports\Messages\MessageRequestItem.cs" />
   </ItemGroup>
