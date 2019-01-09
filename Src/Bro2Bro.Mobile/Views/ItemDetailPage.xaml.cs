@@ -26,8 +26,8 @@ namespace Bro2Bro.Mobile.Views
 
             var item = new Item
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                BroName = "Item 1",
+                Content = "This is an item description."
             };
 
             viewModel = new ItemDetailViewModel(item);

@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Bro2Bro.Mobile.Models;
-using Bro2Bro.Mobile.Views;
 using Bro2Bro.Mobile.ViewModels;
 
 namespace Bro2Bro.Mobile.Views
@@ -27,13 +22,13 @@ namespace Bro2Bro.Mobile.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Item;
-            if (item == null)
+            if (!(args.SelectedItem is Item item))
+            {
                 return;
+            }
 
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
-            // Manually deselect item.
             ItemsListView.SelectedItem = null;
         }
 
@@ -47,7 +42,9 @@ namespace Bro2Bro.Mobile.Views
             base.OnAppearing();
 
             if (viewModel.Items.Count == 0)
+            {
                 viewModel.LoadItemsCommand.Execute(null);
+            }
         }
     }
 }

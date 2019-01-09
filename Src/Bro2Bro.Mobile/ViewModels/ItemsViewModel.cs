@@ -17,7 +17,7 @@ namespace Bro2Bro.Mobile.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Bros";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
@@ -32,14 +32,18 @@ namespace Bro2Bro.Mobile.ViewModels
         async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
+            {
                 return;
+            }
 
             IsBusy = true;
 
             try
             {
                 Items.Clear();
+
                 var items = await DataStore.GetItemsAsync(true);
+
                 foreach (var item in items)
                 {
                     Items.Add(item);

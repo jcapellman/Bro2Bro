@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,8 +18,8 @@ namespace Bro2Bro.Mobile.Views
 
             Item = new Item
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                BroName = "Item name",
+                Content = "This is an item description."
             };
 
             BindingContext = this;
