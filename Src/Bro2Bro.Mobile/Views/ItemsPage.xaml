@@ -16,6 +16,8 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
+        <Image Source="logo.png" />
+
         <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
