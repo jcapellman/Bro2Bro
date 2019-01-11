@@ -1,5 +1,5 @@
 ﻿using Bro2Bro.Mobile.Models;
-using System;
+
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -11,7 +11,9 @@ namespace Bro2Bro.Mobile.Views
     public partial class MenuPage : ContentPage
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+
         List<HomeMenuItem> menuItems;
+
         public MenuPage()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace Bro2Bro.Mobile.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.Logout, Title="Logout" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
