@@ -1,7 +1,8 @@
 ﻿using Bro2Bro.Mobile.Models;
-using System;
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,6 +12,7 @@ namespace Bro2Bro.Mobile.Views
     public partial class MainPage : MasterDetailPage
     {
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+
         public MainPage()
         {
             InitializeComponent();
@@ -29,8 +31,8 @@ namespace Bro2Bro.Mobile.Views
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                    case (int)MenuItemType.Logout:
+                        MenuPages.Add(id, new NavigationPage(new LoginPage()));
                         break;
                 }
             }
@@ -42,7 +44,9 @@ namespace Bro2Bro.Mobile.Views
                 Detail = newPage;
 
                 if (Device.RuntimePlatform == Device.Android)
+                {
                     await Task.Delay(100);
+                }
 
                 IsPresented = false;
             }
