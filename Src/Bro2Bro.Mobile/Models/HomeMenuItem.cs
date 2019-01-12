@@ -3,7 +3,7 @@
     public enum MenuItemType
     {
         Browse,
-        Logout
+        FindBros
     }
 
     public class HomeMenuItem

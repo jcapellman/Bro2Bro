@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
+    <Compile Update="Views\FindBrosPage.xaml.cs">
+      <DependentUpon>FindBrosPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -26,7 +26,7 @@
     <EmbeddedResource Update="Styles\Global.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LoginPage.xaml">
+    <EmbeddedResource Update="Views\FindBrosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

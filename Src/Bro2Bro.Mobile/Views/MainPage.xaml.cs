@@ -31,8 +31,8 @@ namespace Bro2Bro.Mobile.Views
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuItemType.Logout:
-                        MenuPages.Add(id, new NavigationPage(new LoginPage()));
+                    case (int)MenuItemType.FindBros:
+                        MenuPages.Add(id, new NavigationPage(new FindBrosPage()));
                         break;
                 }
             }
