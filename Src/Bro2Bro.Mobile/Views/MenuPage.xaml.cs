@@ -21,7 +21,7 @@ namespace Bro2Bro.Mobile.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.Logout, Title="Logout" }
+                new HomeMenuItem {Id = MenuItemType.FindBros, Title="Find Bros" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
