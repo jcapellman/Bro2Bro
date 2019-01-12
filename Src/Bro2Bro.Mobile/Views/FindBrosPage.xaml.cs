@@ -6,9 +6,9 @@ using Xamarin.Forms.Xaml;
 namespace Bro2Bro.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FindBros : ContentView
+    public partial class FindBrosPage : ContentPage
     {
-        public FindBros()
+        public FindBrosPage()
         {
             InitializeComponent();
 
