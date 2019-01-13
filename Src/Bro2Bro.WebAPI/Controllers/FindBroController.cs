@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 using Bro2Bro.Mobile.Models;
 
-namespace Bro2Bro.Mobile.Controllers
+namespace Bro2Bro.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    public class ItemController : Controller
+    
+    public class ItemController : BaseController
     {
 
         private readonly IItemRepository ItemRepository;

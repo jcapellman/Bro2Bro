@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bro2Bro.Mobile.Android", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bro2Bro.Mobile.iOS", "Bro2Bro.Mobile.iOS\Bro2Bro.Mobile.iOS.csproj", "{468AAD30-77D4-4279-8AA4-6278D5A64B6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bro2Bro.Mobile.MobileAppService", "Bro2Bro.Mobile.MobileAppService\Bro2Bro.Mobile.MobileAppService.csproj", "{57C2F72B-55F2-45F2-9732-7E3626EAF4D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bro2Bro.WebAPI", "Bro2Bro.WebAPI\Bro2Bro.WebAPI.csproj", "{57C2F72B-55F2-45F2-9732-7E3626EAF4D5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bro2Bro.Mobile", "Bro2Bro.Mobile\Bro2Bro.Mobile.csproj", "{9C1D9A6B-459D-4A20-BABC-2B444082068E}"
 EndProject

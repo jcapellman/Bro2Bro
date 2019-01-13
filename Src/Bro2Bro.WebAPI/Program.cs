@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
 
-namespace Bro2Bro.Mobile.MobileAppService
+namespace Bro2Bro.WebAPI
 {
     public class Program
     {
