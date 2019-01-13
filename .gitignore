@@ -1,9 +1,4 @@
-src/Bro2Bro.Mobile.Android/obj/*
-src/Bro2Bro.Mobile.MobileAppService/bin/*
-src/Bro2Bro.Mobile.MobileAppService/obj/*
-src/Bro2Bro.Mobile.UWP/bin/*
-src/Bro2Bro.Mobile.UWP/obj/*
-src/Bro2Bro.Mobile.iOS/obj/*
-src/Bro2Bro.Mobile.iOS/bin/*
-src/Bro2Bro.Mobile/bin/*
-src/Bro2Bro.Mobile/obj/*
+src/*/bin/*
+src/*/obj/*
+Src/.vs/*
+*.csproj.user
