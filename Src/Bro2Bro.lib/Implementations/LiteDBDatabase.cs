@@ -14,6 +14,11 @@ namespace Bro2Bro.lib.Implementations
         
         public List<Bros> GetBros(string searchQuery)
         {
+            if (string.IsNullOrEmpty(searchQuery))
+            {
+                return new List<Bros>();
+            }
+
             using (var liteDb = new LiteDatabase(_connectionString))
             {
                 return liteDb.GetCollection<Bros>().Find(a => a.DisplayName.Contains(searchQuery)).ToList();
