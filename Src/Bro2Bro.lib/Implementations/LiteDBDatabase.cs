@@ -24,5 +24,26 @@ namespace Bro2Bro.lib.Implementations
                 return liteDb.GetCollection<Bros>().Find(a => a.DisplayName.Contains(searchQuery)).ToList();
             }
         }
+
+        public bool RegisterBro(string broId, string displayName)
+        {
+            if (string.IsNullOrEmpty(broId) || string.IsNullOrEmpty(displayName))
+            {
+                return false;
+            }
+
+            using (var liteDb = new LiteDatabase(_connectionString))
+            {
+                var db = liteDb.GetCollection<Bros>();
+
+                db.Insert(new Bros
+                {
+                    DisplayName = displayName,
+                    BroID = broId
+                });
+                
+                return true;
+            }
+        }
     }
 }
