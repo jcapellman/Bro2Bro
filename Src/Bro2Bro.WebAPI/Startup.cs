@@ -1,5 +1,8 @@
 ﻿using System.Threading.Tasks;
 
+using Bro2Bro.lib.Implementations;
+using Bro2Bro.lib.Interfaces;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -8,9 +11,7 @@ using Microsoft.Extensions.Logging;
 
 using Swashbuckle.AspNetCore.Swagger;
 
-using Bro2Bro.Mobile.Models;
 using NLog.Extensions.Logging;
-using NLog.Web;
 
 namespace Bro2Bro.WebAPI
 {
@@ -33,15 +34,15 @@ namespace Bro2Bro.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<IItemRepository, ItemRepository>();
+
+            services.AddSingleton(typeof(IDatabase), typeof(LiteDbDatabase));
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BroAPI", Version = "v1" });
             });
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddNLog();
