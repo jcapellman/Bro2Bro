@@ -7,7 +7,7 @@ using Bro2Bro.lib.HttpHandlers.Base;
 namespace Bro2Bro.lib.HttpHandlers
 {
     public class FindBroHandler : BaseHttpHandler {
-        public FindBroHandler(string serverConnection) : base(serverConnection)
+        public FindBroHandler(string baseWebServiceUrlConnection) : base(baseWebServiceUrlConnection)
         {
         }
 

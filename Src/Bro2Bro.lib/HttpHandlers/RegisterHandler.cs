@@ -8,7 +8,7 @@ namespace Bro2Bro.lib.HttpHandlers
     {
         public async Task<bool> RegisterAsync(string broId, string displayName) => await PostAsync<bool>("/Register", broId, displayName);
 
-        public RegisterHandler(string serverConnection) : base(serverConnection)
+        public RegisterHandler(string baseWebServiceUrlConnection) : base(baseWebServiceUrlConnection)
         {
         }
     }

@@ -8,13 +8,13 @@ namespace Bro2Bro.lib.HttpHandlers.Base
 {
     public class BaseHttpHandler
     {
-        private string _server;
+        private readonly string _baseWebServiceUrl;
 
         private readonly HttpClient _httpClient;
 
-        public BaseHttpHandler(string serverConnection)
+        public BaseHttpHandler(string baseWebServiceUrl)
         {
-            _server = serverConnection;
+            _baseWebServiceUrl = baseWebServiceUrl;   
 
             _httpClient = new HttpClient();
         }
@@ -25,7 +25,7 @@ namespace Bro2Bro.lib.HttpHandlers.Base
 
             var encodedContent = new FormUrlEncodedContent(parameters);
 
-            var response = await _httpClient.PostAsync(url, encodedContent).ConfigureAwait(false);
+            var response = await _httpClient.PostAsync(url, encodedContent);
 
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
         }
@@ -33,10 +33,8 @@ namespace Bro2Bro.lib.HttpHandlers.Base
         public async Task<T> GetAsync<T>(string url, params string[] param)
         {
             var parameters = param.ToDictionary(a => nameof(a), v => v);
-
-            var encodedContent = new FormUrlEncodedContent(parameters);
-
-            var uri = $"{url}?{parameters.Select(a => $"{a.Key}={a.Value}")}";
+            
+            var uri = $"{_baseWebServiceUrl}{url}?{string.Join("&", parameters.Select(a => $"{a.Key}={a.Value}"))}";
 
             var response = await _httpClient.GetAsync(uri);
 

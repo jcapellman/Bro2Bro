@@ -53,7 +53,7 @@ namespace Bro2Bro.lib.Implementations
                 var db = liteDb.GetCollection<Bros>();
 
                 db.Delete(a => a.Active);
-
+                    
                 return true;
             }
         }
