@@ -13,6 +13,6 @@ namespace Bro2Bro.WebAPI.Controllers
         public FindBroController(IDatabase iDatabase) : base(iDatabase) { }
         
         [HttpGet]
-        public List<Bros> List(string broName) => Database.GetBros(broName);
+        public List<Bros> List(string query) => Database.GetBros(query);
     }
 }

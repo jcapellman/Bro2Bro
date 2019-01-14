@@ -29,5 +29,18 @@ namespace Bro2Bro.lib.HttpHandlers.Base
 
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
         }
+
+        public async Task<T> GetAsync<T>(string url, params string[] param)
+        {
+            var parameters = param.ToDictionary(a => nameof(a), v => v);
+
+            var encodedContent = new FormUrlEncodedContent(parameters);
+
+            var uri = $"{url}?{parameters.Select(a => $"{a.Key}={a.Value}")}";
+
+            var response = await _httpClient.GetAsync(uri);
+
+            return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+        }
     }
 }
