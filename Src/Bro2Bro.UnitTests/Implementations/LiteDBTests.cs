@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 using Bro2Bro.lib.Implementations;
 
@@ -9,6 +10,40 @@ namespace Bro2Bro.UnitTests.Implementations
     [TestClass]
     public class LiteDbTests
     {
+        #region Cleanup
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            var db = new LiteDbDatabase();
+
+            
+        }
+
+        #endregion
+        #region RegisterBro
+        [TestMethod]
+        public void RegisterBroNull()
+        {
+            var db = new LiteDbDatabase();
+
+            var result = db.RegisterBro(null, null);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void RegisterBroNew()
+        {
+            var db = new LiteDbDatabase();
+
+            var result = db.RegisterBro(Guid.NewGuid().ToString(), "John Wick");
+
+            Assert.IsTrue(result);
+        }
+        #endregion
+
+        #region GetBros
         [TestMethod]
         public void GetBrosNull()
         {
@@ -53,5 +88,6 @@ namespace Bro2Bro.UnitTests.Implementations
             Assert.IsTrue(result.Any());
             Assert.IsTrue(result.Count == 1);
         }
+#endregion
     }
 }
