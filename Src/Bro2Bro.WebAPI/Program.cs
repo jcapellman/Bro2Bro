@@ -2,6 +2,8 @@
 
 using Microsoft.AspNetCore.Hosting;
 
+using NLog.Web;
+
 namespace Bro2Bro.WebAPI
 {
     public class Program
@@ -12,6 +14,7 @@ namespace Bro2Bro.WebAPI
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
+                .UseNLog()
                 .UseStartup<Startup>()
                 .Build();
 
