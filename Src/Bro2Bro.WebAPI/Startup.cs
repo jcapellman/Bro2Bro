@@ -35,7 +35,7 @@ namespace Bro2Bro.WebAPI
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "BroAPI", Version = "v1" });
             });
         }
 
@@ -50,7 +50,7 @@ namespace Bro2Bro.WebAPI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "BroAPI v1");
             });
 
             app.Run(async (context) => await Task.Run(() => context.Response.Redirect("/swagger")));
