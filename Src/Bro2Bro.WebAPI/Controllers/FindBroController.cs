@@ -1,76 +1,18 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
 
-using Bro2Bro.Mobile.Models;
+using Bro2Bro.lib.DAL;
+using Bro2Bro.lib.Interfaces;
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace Bro2Bro.WebAPI.Controllers
 {
     
-    public class ItemController : BaseController
+    public class FindBroController : BaseController
     {
-
-        private readonly IItemRepository ItemRepository;
-
-        public ItemController(IItemRepository itemRepository)
-        {
-            ItemRepository = itemRepository;
-        }
-
+        public FindBroController(IDatabase iDatabase) : base(iDatabase) { }
+        
         [HttpGet]
-        public IActionResult List()
-        {
-            return Ok(ItemRepository.GetAll());
-        }
-
-        [HttpGet("{id}")]
-        public Item GetItem(string id)
-        {
-            Item item = ItemRepository.Get(id);
-            return item;
-        }
-
-        [HttpPost]
-        public IActionResult Create([FromBody]Item item)
-        {
-            try
-            {
-                if (item == null || !ModelState.IsValid)
-                {
-                    return BadRequest("Invalid State");
-                }
-
-                ItemRepository.Add(item);
-
-            }
-            catch (Exception)
-            {
-                return BadRequest("Error while creating");
-            }
-            return Ok(item);
-        }
-
-        [HttpPut]
-        public IActionResult Edit([FromBody] Item item)
-        {
-            try
-            {
-                if (item == null || !ModelState.IsValid)
-                {
-                    return BadRequest("Invalid State");
-                }
-                ItemRepository.Update(item);
-            }
-            catch (Exception)
-            {
-                return BadRequest("Error while creating");
-            }
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public void Delete(string id)
-        {
-            ItemRepository.Remove(id);
-        }
+        public List<Bros> List(string broName) => Database.GetBros(broName);
     }
 }
