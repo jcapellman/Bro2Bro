@@ -1,4 +1,4 @@
-﻿namespace Bro2Bro.lib.DAL
+﻿namespace Bro2Bro.lib.DAL.Base
 {
     public class BaseTable
     {
