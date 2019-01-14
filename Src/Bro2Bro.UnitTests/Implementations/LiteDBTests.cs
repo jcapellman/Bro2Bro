@@ -17,7 +17,7 @@ namespace Bro2Bro.UnitTests.Implementations
         {
             var db = new LiteDbDatabase();
 
-            
+            db.ClearBros();
         }
 
         #endregion
@@ -81,6 +81,8 @@ namespace Bro2Bro.UnitTests.Implementations
         public void GetBrosFound()
         {
             var db = new LiteDbDatabase();
+
+            db.RegisterBro("test", "found");
 
             var result = db.GetBros("found");
 

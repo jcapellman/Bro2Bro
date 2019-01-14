@@ -45,5 +45,17 @@ namespace Bro2Bro.lib.Implementations
                 return true;
             }
         }
+
+        public bool ClearBros()
+        {
+            using (var liteDb = new LiteDatabase(_connectionString))
+            {
+                var db = liteDb.GetCollection<Bros>();
+
+                db.Delete(a => a.Active);
+
+                return true;
+            }
+        }
     }
 }
