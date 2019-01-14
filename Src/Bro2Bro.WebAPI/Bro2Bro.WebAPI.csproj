@@ -16,4 +16,8 @@
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.7.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bro2Bro.lib\Bro2Bro.lib.csproj" />
+  </ItemGroup>
 </Project>
