@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Bro2Bro.Mobile.MobileAppService": {
+    "Bro2Bro.WebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
