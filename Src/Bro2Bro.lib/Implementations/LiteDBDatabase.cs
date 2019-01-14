@@ -57,5 +57,15 @@ namespace Bro2Bro.lib.Implementations
                 return true;
             }
         }
+
+        public List<Messages> GetMessages(string senderBroId, string receiverBroId)
+        {
+            using (var liteDb = new LiteDatabase(_connectionString))
+            {
+                var db = liteDb.GetCollection<Messages>();
+
+                return db.Find(a => a.SenderBroId == senderBroId && a.ReceiverBroId == receiverBroId && a.Active).ToList();
+            }
+        }
     }
 }
