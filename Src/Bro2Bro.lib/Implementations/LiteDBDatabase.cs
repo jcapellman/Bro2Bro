@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Bro2Bro.lib.DAL;
@@ -65,6 +66,27 @@ namespace Bro2Bro.lib.Implementations
                 var db = liteDb.GetCollection<Messages>();
 
                 return db.Find(a => a.SenderBroId == senderBroId && a.ReceiverBroId == receiverBroId && a.Active).ToList();
+            }
+        }
+
+        public bool SendMessage(string senderBroId, string receiverBroId, string content)
+        {
+            using (var liteDb = new LiteDatabase(_connectionString))
+            {
+                var db = liteDb.GetCollection<Messages>();
+
+                var message = new Messages
+                {
+                    Active = true,
+                    Content = content,
+                    ReceiverBroId = receiverBroId,
+                    Timestamp = DateTime.Now,
+                    SenderBroId = senderBroId
+                };
+
+                db.Insert(message);
+
+                return true;
             }
         }
     }
