@@ -14,5 +14,8 @@ namespace Bro2Bro.lib.HttpHandlers
 
         public async Task<List<Messages>> GetMessagesAsync(string senderBroId, string receiverBroId) =>
             await GetAsync<List<Messages>>("Messages", senderBroId, receiverBroId);
+
+        public async Task<bool> SendMessageAsync(string receiverBroId, string content) =>
+            await PostAsync<bool>("Messages", receiverBroId, content);
     }
 }
