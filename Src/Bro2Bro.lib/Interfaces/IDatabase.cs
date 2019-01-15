@@ -13,5 +13,7 @@ namespace Bro2Bro.lib.Interfaces
         bool ClearBros();
 
         List<Messages> GetMessages(string senderBroId, string receiverBroId);
+
+        bool SendMessage(string senderBroId, string receiverBroId, string content);
     }
 }
