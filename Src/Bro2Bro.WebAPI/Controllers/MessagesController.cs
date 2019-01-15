@@ -16,5 +16,8 @@ namespace Bro2Bro.WebAPI.Controllers
         [HttpGet]
         public List<Messages> GetMessages(string senderBroId, string receiverBroId) =>
             Database.GetMessages(senderBroId, receiverBroId);
+
+        [HttpPost]
+        public bool SendMessage(string receiverBroId, string content) => Database.SendMessage(string.Empty, receiverBroId, content);
     }
 }
