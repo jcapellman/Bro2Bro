@@ -8,7 +8,7 @@ namespace Bro2Bro.lib.HttpHandlers
 {
     public class MessagesHandler : BaseHttpHandler
     {
-        public MessagesHandler(string baseWebServiceUrl) : base(baseWebServiceUrl)
+        public MessagesHandler(string baseWebServiceUrl, string broId) : base(baseWebServiceUrl, broId)
         {
         }
 

@@ -13,7 +13,7 @@ namespace Bro2Bro.UnitTests.HttpHandlers
         [TestMethod]
         public async Task NullArguments()
         {
-            var messageHandler = new MessagesHandler(SERVER_BASE_URL);
+            var messageHandler = new MessagesHandler(SERVER_BASE_URL, string.Empty);
 
             var result = await messageHandler.SendMessageAsync(null, null);
 

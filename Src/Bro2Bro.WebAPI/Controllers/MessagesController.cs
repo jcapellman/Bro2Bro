@@ -10,7 +10,7 @@ namespace Bro2Bro.WebAPI.Controllers
 {
     public class MessagesController : BaseController
     {
-        public MessagesController(IDatabase iDatabase, IRequestContext requestContext) : base(iDatabase, requestContext) { }
+        public MessagesController(IDatabase iDatabase, IHttpRequestContext httpRequestContext) : base(iDatabase, httpRequestContext) { }
 
         [HttpGet]
         public List<Messages> GetMessages(string senderBroId, string receiverBroId) =>

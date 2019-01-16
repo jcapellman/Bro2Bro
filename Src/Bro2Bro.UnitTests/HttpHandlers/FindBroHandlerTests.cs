@@ -13,7 +13,7 @@ namespace Bro2Bro.UnitTests.HttpHandlers
         [TestMethod]
         public async Task NullTest()
         {
-            var findBroHandler = new FindBroHandler(SERVER_BASE_URL);
+            var findBroHandler = new FindBroHandler(SERVER_BASE_URL, string.Empty);
 
             var result = await findBroHandler.FindBrosAsync(null);
         }

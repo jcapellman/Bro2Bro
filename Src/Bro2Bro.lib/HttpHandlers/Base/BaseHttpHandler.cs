@@ -9,14 +9,16 @@ namespace Bro2Bro.lib.HttpHandlers.Base
     public class BaseHttpHandler
     {
         private readonly string _baseWebServiceUrl;
-
+        
         private readonly HttpClient _httpClient;
 
-        public BaseHttpHandler(string baseWebServiceUrl)
+        public BaseHttpHandler(string baseWebServiceUrl, string broId = null)
         {
             _baseWebServiceUrl = baseWebServiceUrl;   
-
+            
             _httpClient = new HttpClient();
+
+            _httpClient.DefaultRequestHeaders.Add("BroId", broId);
         }
 
         public async Task<T> PostAsync<T>(string url, params string[] param)
