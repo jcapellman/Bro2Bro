@@ -1,4 +1,5 @@
 ﻿using Bro2Bro.lib.Interfaces;
+using Bro2Bro.WebAPI.Auth;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,9 +10,12 @@ namespace Bro2Bro.WebAPI.Controllers
     {
         protected readonly IDatabase Database;
 
-        public BaseController(IDatabase iDatabase)
+        protected IHttpRequestContext HttpRequestContext;
+
+        public BaseController(IDatabase iDatabase, IHttpRequestContext httpRequestContext)
         {
             Database = iDatabase;
+            HttpRequestContext = httpRequestContext;
         }
     }
 }

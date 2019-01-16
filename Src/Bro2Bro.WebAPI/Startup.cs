@@ -2,7 +2,7 @@
 
 using Bro2Bro.lib.Implementations;
 using Bro2Bro.lib.Interfaces;
-
+using Bro2Bro.WebAPI.Auth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -34,6 +34,8 @@ namespace Bro2Bro.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSingleton<IHttpRequestContext, HttpHttpRequestContext>();
 
             services.AddSingleton(typeof(IDatabase), typeof(LiteDbDatabase));
 
