@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bro2Bro.lib\Bro2Bro.lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Views\FindBrosPage.xaml.cs">
       <DependentUpon>FindBrosPage.xaml</DependentUpon>
     </Compile>
