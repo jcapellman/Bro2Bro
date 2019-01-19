@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bro2Bro.Mobile.UWP", "Bro2Bro.Mobile.UWP\Bro2Bro.Mobile.UWP.csproj", "{245A4F05-00EE-428B-8AE6-AB64B171A588}"
 EndProject
@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bro2Bro.WebAPI", "Bro2Bro.W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bro2Bro.Mobile", "Bro2Bro.Mobile\Bro2Bro.Mobile.csproj", "{9C1D9A6B-459D-4A20-BABC-2B444082068E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bro2Bro.lib", "Bro2Bro.lib\Bro2Bro.lib.csproj", "{68220E84-B973-4BB5-90EF-F707430D7D9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bro2Bro.lib", "Bro2Bro.lib\Bro2Bro.lib.csproj", "{68220E84-B973-4BB5-90EF-F707430D7D9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bro2Bro.UnitTests", "Bro2Bro.UnitTests\Bro2Bro.UnitTests.csproj", "{1ABE7720-1CDD-4159-B823-3C1427164164}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bro2Bro.UnitTests", "Bro2Bro.UnitTests\Bro2Bro.UnitTests.csproj", "{1ABE7720-1CDD-4159-B823-3C1427164164}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -101,6 +101,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bro2Bro.lib\Bro2Bro.lib.csproj">
+      <Project>{68220e84-b973-4bb5-90ef-f707430d7d9d}</Project>
+      <Name>Bro2Bro.lib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bro2Bro.Mobile\Bro2Bro.Mobile.csproj">
       <Project>{1B3CD498-81A8-4D40-845E-4127F7401C8C}</Project>
       <Name>Bro2Bro.Mobile</Name>
