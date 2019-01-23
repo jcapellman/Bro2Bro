@@ -4,7 +4,7 @@ using System.Linq;
 
 using Bro2Bro.lib.DAL;
 using Bro2Bro.lib.Interfaces;
-
+using Bro2Bro.lib.Transports;
 using LiteDB;
 
 namespace Bro2Bro.lib.Implementations
@@ -87,6 +87,30 @@ namespace Bro2Bro.lib.Implementations
                 db.Insert(message);
 
                 return true;
+            }
+        }
+
+        public List<MessageThreadListingResponseItem> GetMessageThreads(string receiverBroId)
+        {
+            using (var liteDb = new LiteDatabase(_connectionString))
+            {
+                var db = liteDb.GetCollection<Messages>();
+
+                var threads = new List<MessageThreadListingResponseItem>();
+
+                var results = db.Find(a => a.ReceiverBroId == receiverBroId && a.Active).ToList();
+
+                foreach (var senderBroId in results.GroupBy(p => p.SenderBroId).Select(g => g.Key).ToList())
+                {
+                    threads.Add(new MessageThreadListingResponseItem
+                    {
+                        BroId = senderBroId,
+                        LastMessage = results.Where(a => a.SenderBroId == senderBroId).Max(a => a.Timestamp),
+                        MessageCount = results.Count(a => a.SenderBroId == senderBroId)
+                    });
+                }
+
+                return threads;
             }
         }
     }
